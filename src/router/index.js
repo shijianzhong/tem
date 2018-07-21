@@ -37,6 +37,36 @@ export const constantRouterMap = [
     }]
   },
 
+
+  {
+    path: '/vipmanagement',
+    component: Layout,
+    redirect: '/vipmanagement/viplevel',
+    name: 'VipManagement',
+    meta: { title: '会员等级', icon: 'table' },
+    children: [
+      {
+        path: 'viplevel',
+        name: 'VipLevel',
+        component: () => import('@/views/vip/viplevel'),
+        meta: { title: '等级列表', icon: 'table' }
+      },
+      {
+        path: 'addlevel',
+        name: 'AddLevel',
+        component: () => import('@/views/vip/addlevel'),
+        meta: { title: '添加等级', icon: 'tree' }
+      },
+      {
+        path: 'viprule',
+        name: 'VipRule',
+        component: () => import('@/views/vip/integral'),
+        meta: { title: '积分规则设置', icon: 'tree' }
+      },
+
+   
+    ]
+  },
   {
     path: '/vipmanagement',
     component: Layout,
@@ -44,18 +74,6 @@ export const constantRouterMap = [
     name: 'VipManagement',
     meta: { title: '会员管理', icon: 'table' },
     children: [
-      {
-        path: 'viplevel',
-        name: 'VipLevel',
-        component: () => import('@/views/vip/viplevel'),
-        meta: { title: '会员等级设置', icon: 'table' }
-      },
-      {
-        path: 'viprule',
-        name: 'VipRule',
-        component: () => import('@/views/tree/index'),
-        meta: { title: '积分规则设置', icon: 'tree' }
-      },
       {
         path: 'vipm',
         name: 'Vipm',
@@ -68,32 +86,32 @@ export const constantRouterMap = [
   {
     path: '/infomanagement',
     component: Layout,
-    redirect: '/infomanagement/table',
+    redirect: '/infomanagement/infoclasscfg',
     name: 'InfoManagement',
     meta: { title: '信息管理', icon: 'table' },
     children: [
       {
         path: 'infoclasscfg',
         name: 'InfoClassCfg',
-        component: () => import('@/views/table/index'),
+        component: () => import('@/views/infoclass/infoclasscfg'),
         meta: { title: '信息分类配置', icon: 'table' }
       },
       {
         path: 'statelabel',
         name: 'StateLabel',
-        component: () => import('@/views/tree/index'),
+        component: () => import('@/views/infoclass/statelabel'),
         meta: { title: '状态标签维护', icon: 'tree' }
       },
       {
         path: 'generallabel',
         name: 'GeneralLabel',
-        component: () => import('@/views/table/index'),
+        component: () => import('@/views/infoclass/generallabel'),
         meta: { title: '通用标签维护', icon: 'table' }
       },
       {
         path: 'infopub',
         name: 'InfoPub',
-        component: () => import('@/views/table/index'),
+        component: () => import('@/views/infoclass/newspub'),
         meta: { title: '信息发布管理', icon: 'table' }
       },
       {
