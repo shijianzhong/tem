@@ -9,7 +9,13 @@ import {
   tagList,
   saveTagList,
   deleteTagInfo,
-  getNewsList
+  getNewsList,
+  getCascaderData,
+  getStatusLabelData,
+  getTagsListData,
+  getVipLevelData,
+  getNamesListData,
+  saveNews,
 } from '@/api/info'
 import {
   getToken,
@@ -50,6 +56,75 @@ const vip = {
 
   actions: {
 
+
+
+    saveNews({
+      commit
+    }, postdata) {
+      return new Promise((resolve, reject) => {
+        getNamesListData(postdata).then(response => {
+          resolve(response);
+        }).catch(error => {
+          reject(error)
+        })
+      })
+    },
+    getNamesListData({
+      commit
+    }) {
+      return new Promise((resolve, reject) => {
+        getNamesListData().then(response => {
+          resolve(response);
+        }).catch(error => {
+          reject(error)
+        })
+      })
+    },
+
+    getVipLevelData({
+      commit
+    }) {
+      return new Promise((resolve, reject) => {
+        getVipLevelData().then(response => {
+          resolve(response);
+        }).catch(error => {
+          reject(error)
+        })
+      })
+    },
+    getTagsListData({
+      commit
+    }) {
+      return new Promise((resolve, reject) => {
+        getTagsListData().then(response => {
+          resolve(response);
+        }).catch(error => {
+          reject(error)
+        })
+      })
+    },
+    getStatusLabelData({
+      commit
+    }) {
+      return new Promise((resolve, reject) => {
+        getStatusLabelData().then(response => {
+          resolve(response);
+        }).catch(error => {
+          reject(error)
+        })
+      })
+    },
+    getCascaderData({
+      commit
+    }) {
+      return new Promise((resolve, reject) => {
+        getCascaderData().then(response => {
+          resolve(response);
+        }).catch(error => {
+          reject(error)
+        })
+      })
+    },
 
     getNewsList({
       commit

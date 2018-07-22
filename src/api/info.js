@@ -137,3 +137,44 @@ export function getNewsList(){
         method: 'get',
     })
 }
+
+export function getCascaderData(){
+    return request({
+        url:`/admin/category/all`,
+        method:'get'
+    })
+}
+
+export function getStatusLabelData(){
+    return request({
+        url:`/admin/status_label/list`,
+        method:'get'
+    })
+}
+export function getTagsListData(){
+    return request({
+        url:`/admin/tag/list`,
+        method:'get'
+    })
+}
+export function getVipLevelData(){
+    return request({
+        url:`/admin/user_level/list`,
+        method:'get'
+    })
+}
+
+export function getNamesListData(){
+    return request({
+        url:`/admin/user/names`,
+        method:'get'
+    })
+}
+
+export function saveNews(requestdata){
+    return request({
+        url:`/admin/user/names`,
+        method:'post',
+        data:requestdata,
+    })
+}
